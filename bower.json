@@ -15,7 +15,8 @@
     "feathers-client": "^1.1.0",
     "ngSweetAlert": "angular-sweetalert#~1.1.0",
     "angular-google-maps": "~2.3.2",
-    "angular-base64-upload": "~0.1.19"
+    "angular-base64-upload": "~0.1.19",
+    "font-awesome": "fontawesome#~4.6.3"
   },
   "overrides": {
     "moment": {

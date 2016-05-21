@@ -3,5 +3,6 @@ angular.module('app.features', [
   'app.homepage',
   'app.categories',
   'app.products',
-  'app.product'
+  'app.product',
+  'app.cart',
 ]);
