@@ -16,7 +16,7 @@ $footer-bgc    = #212121;
   .logo {
     display:     inline-block;
     line-height: $navbar-height;
-    font-size:   25px;
+    font-size:   23px;
     margin:      0 20px;
     font-weight: bolder;
   }
@@ -27,6 +27,7 @@ $footer-bgc    = #212121;
     list-style-type: none;
     margin:          0 20px;
     font-size: 20px;
+    padding: 0;
     font-weight: bolder;
      li {
       display: inline-block;
@@ -75,6 +76,9 @@ $footer-bgc    = #212121;
   .product-containter {
     padding: 70px 40px;
 
+    @media (max-width:553px){
+      padding: 70px 10px;
+    }
     .header {
       margin-bottom: 65px;
       font-size: 30px;
@@ -102,6 +106,7 @@ $footer-bgc    = #212121;
 
       @media (max-width:553px){
         width: 100%;
+        margin-right:     0px
       }
 
       .image {
