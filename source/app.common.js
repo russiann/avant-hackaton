@@ -2,5 +2,6 @@
 angular.module('app.common', [
   'app.directive.menu',
   'app.directive.multiSelect',
-  'app.services.auth'
+  'app.services.auth',
+  'app.services.cart'
 ]);

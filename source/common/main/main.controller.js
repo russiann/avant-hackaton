@@ -1,17 +1,26 @@
 class MainController {
   /* @ngInject */
-  constructor (Auth, $state) {
+  constructor (Auth, CartService) {
     this.Auth = Auth;
-    this.$state = $state;
+    this.CartService = CartService;
   }
 
   isLogged () {
     return this.Auth.isLogged();
   }
 
-  goTo (stateName, params) {
-    this.$state.go(stateName, params);
+  cartCount() {
+    return this.CartService.count();
   }
+
+  addItem(item) {
+    this.CartService.addItem(item);
+  }
+
+  removeItem(item, index) {
+    this.CartService.removeItem(item, index);
+  }
+
 }
 
 angular.module('app.main')

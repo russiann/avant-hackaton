@@ -1,9 +1,9 @@
 .nav-bar
-  .logo Nome da Loja
+  .logo(ui-sref="homepage") Nome da Loja
   ul
     li.cart(ui-sref="cart")
       i.fa.fa-shopping-cart 
-      | 2
+      | {{main.cartCount()}}
 .cart-feature
   .table-wrapper
     table.ui.very.basic.table
@@ -15,16 +15,16 @@
           th Quantidade
           th Total
       tbody
-        tr(ng:repeat="item in [1,2,3,4,5,6,7,8,9,10]")
+        tr(ng:repeat="item in vm.getCart() track by $index")
           td: img(src="https://unsplash.it/400/400/?random")
-          td Produto Um
-          td R$ 45,00
+          td {{item.Name}}
+          td {{item.Price | currency}}
           td
             .quantity
-              .minus: i.fa.fa-plus
-              .number 2
-              .add: i.fa.fa-minus
-          td R$ 45,00
+              .minus(ng:click="vm.addItem(item)"): i.fa.fa-plus
+              .number {{item.quantity}}
+              .add(ng:click="vm.removeItem(item, $index)"): i.fa.fa-minus
+          td {{item.Price * item.quantity | currency}}
     .actions
       .continue-buying(ui-sref="homepage") Continue Comprando
       .finish-button Finalizar

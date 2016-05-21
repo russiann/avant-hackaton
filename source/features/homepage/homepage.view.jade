@@ -1,9 +1,9 @@
 .nav-bar
-  .logo Nome da Loja
+  .logo(ui-sref="homepage") Nome da Loja
   ul
     li.cart(ui-sref="cart")
       i.fa.fa-shopping-cart 
-      | 2
+      | {{main.cartCount()}}
 .home-feature
   
   .main-header
