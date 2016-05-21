@@ -9,8 +9,8 @@
   .product-containter
     .header Nossos Produtos
     .products
-      .product(ng:repeat="product in [1,2,3,4,5,6,7,8,9,10]")
-        .image: img(src="https://unsplash.it/200/200/?random")
+      .product(ng:repeat="product in [1,2,3,4,5,6,7,8,9,10]" ui-sref="product")
+        .image: img(src="https://unsplash.it/400/400/?random")
         .infos
           .title Produto {{product}}
           .category Category
