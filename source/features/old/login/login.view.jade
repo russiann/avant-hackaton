@@ -1,0 +1,22 @@
+.login-feature
+  .ui.centered.grid
+    .row
+      .five.wide.column
+        form.ui.form
+          h2.ui.dividing.header Login
+          .field
+            label E-mail
+            input(name='email', 
+            placeholder='example@example.com',
+            ng-model='vm.user.email',
+            type='email')
+          .field
+            label Password
+            input(name='password', 
+            placeholder='your password', 
+            ng-model='vm.user.password',
+            type='password')
+          
+          
+          button.fluid.ui.primary.button(
+          ng-click='vm.auth(vm.user)') Entrar

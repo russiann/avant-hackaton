@@ -1,0 +1,15 @@
+.saveCategory-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          form.ui.form(name="categoryForm")
+            h2.ui.dividing.header Nova Categoria
+            .field
+              label Nome da Categoria
+              input(type='text' name='name' ng:model='vm.category.Name' placeholder='Nome da Categoria')
+
+            .field
+              button.fluid.ui.primary.button(ng-click='vm.save(vm.category)') Criar Categoria
+
+        

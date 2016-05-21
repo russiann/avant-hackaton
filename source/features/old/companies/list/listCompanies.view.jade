@@ -1,0 +1,33 @@
+.listCompanies-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          h2.ui.dividing.header Empresas
+
+          .field
+            table.ui.striped.compact.table
+              thead
+                tr
+                  th Nome
+                  th Email
+                  th Ações
+              tbody
+                tr(ng:repeat="company in vm.companies")
+                  td {{company.name}}
+                  td {{company.email}}
+                  td
+                    button.ui.button(ng:click="main.goTo('editCompany', {id: company._id})") Editar
+                    button.ui.button(ng:click="main.goTo('listCategories', {companyId: company._id})") Categorias
+                    button.ui.button(ng:click="main.goTo('listProducts', {companyId: company._id})") Produtos
+                    
+              tfoot.full-width
+                tr
+                  th: b {{vm.companies.length}} Empresas
+                  th(colspan='4')
+                    .ui.right.floated.small.primary.labeled.icon.button(ng:click="main.goTo('saveCompany')")
+                      i.plus.icon
+                      |  Adicionar Empresa
+
+
+      

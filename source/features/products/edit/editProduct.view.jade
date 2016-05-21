@@ -1,0 +1,29 @@
+.editProduct-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          form.ui.form(name="productForm")
+            h2.ui.dividing.header Editar Produto
+            .field
+              label Nome do Produto
+              input(type='text' name='name' ng:model='vm.product.name' placeholder='Nome do Produto')
+            
+            .field
+              label Preço
+              input(type='text' name='name' ng:model='vm.product.price' placeholder='Preço')
+            
+            .field
+              label Categoria
+              select.ui.dropdown(name='category' ng:model='vm.product.category')
+                option(ng:repeat="category in vm.categories track by $index" value="{{category._id}}") {{category.name}}
+                
+            .field
+              .ui.checkbox
+                input(type='checkbox' name="active" ng:model="vm.product.promotion")
+                label Produto em promoção
+
+            .field
+              button.fluid.ui.primary.button(ng-click='vm.save(vm.product)') Salvar
+
+        

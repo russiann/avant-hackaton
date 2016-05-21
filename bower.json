@@ -1,0 +1,43 @@
+{
+  "name": "avant-hackaton-front",
+  "version": "0.0.0",
+  "private": "true",
+  "dependencies": {
+    "jquery": "~2.2.1",
+    "underscore": "~1.8.3",
+    "ngstorage": "~0.3.10",
+    "animate.css": "~3.5.1",
+    "ngMask": "angular-mask#~3.0.16",
+    "moment": "~2.11.2",
+    "angular-moment": "~0.10.3",
+    "angular-ui-router": "~0.2.18",
+    "semantic": "semantic-ui#^2.1.8",
+    "feathers-client": "^1.1.0",
+    "ngSweetAlert": "angular-sweetalert#~1.1.0",
+    "angular-google-maps": "~2.3.2",
+    "angular-base64-upload": "~0.1.19"
+  },
+  "overrides": {
+    "moment": {
+      "main": [
+        "moment.js",
+        "locale/pt-br.js"
+      ]
+    },
+    "semantic": {
+      "main": [
+        "./dist/semantic.js",
+        "./dist/semantic.css",
+        "./dist/themes/default/assets/fonts/icons.*"
+      ]
+    },
+    "socket.io": {
+      "main": [
+        "./"
+      ]
+    }
+  },
+  "resolutions": {
+    "moment": "~2.11.2"
+  }
+}

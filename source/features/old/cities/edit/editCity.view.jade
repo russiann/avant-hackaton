@@ -1,0 +1,36 @@
+.saveCity-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          form.ui.form(name="cityForm")
+            h2.ui.dividing.header Nova Cidade
+            .field
+              label Nome da Cidade
+              input(type='text' name='name' ng:model='vm.city.name' placeholder='Nome da Cidade')
+            
+            .field
+              label Adicionar Bairro
+              .ui.action.input
+                input(type='text' ng:model='vm.neighborhoodName' placeholder='Nome do Bairro')
+                button.ui.teal.right.labeled.icon.button(ng:click="vm.addNeighborhood(vm.neighborhoodName)" ng:disabled="!vm.neighborhoodName")
+                  i.plus.icon
+                  | Adicionar
+                  
+            .field
+              table.ui.celled.striped.table
+                thead
+                  tr
+                    th(colspan='3') Bairros
+                tbody
+                  tr(ng:repeat="neighborhood in vm.city.neighborhoods track by $index")
+                    td {{neighborhood.name}}
+                  tr(ng:repeat="neighborhood in vm.neighborhoods track by $index")
+                    td {{neighborhood.name}}
+                  
+
+
+            .field
+              button.fluid.ui.primary.button(ng-click='vm.save(vm.city)') Salvar
+
+        

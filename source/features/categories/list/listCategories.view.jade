@@ -1,0 +1,29 @@
+.listCategories-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          h2.ui.dividing.header Categorias
+
+          .field
+            table.ui.celled.striped.table
+              thead
+                tr
+                  th Nome
+                  th Ações
+              tbody
+                tr(ng:repeat="category in vm.categories")
+                  td {{category.Name}}
+                  td
+                    button.ui.button(ng:click="main.goTo('editCategory', {companyId: vm.companyId, id: category._id})") Editar
+                    
+              tfoot.full-width
+                tr
+                  th: b {{vm.categories.length}} categorias
+                  th(colspan='4')
+                    .ui.right.floated.small.primary.labeled.icon.button(ng:click="main.goTo('saveCategory', {companyId: vm.companyId})")
+                      i.plus.icon
+                      |  Adicionar Categoria
+
+
+      

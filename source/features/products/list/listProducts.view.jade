@@ -1,0 +1,33 @@
+.listProducts-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          h2.ui.dividing.header Produtos
+
+          .field
+            table.ui.celled.striped.table
+              thead
+                tr
+                  th Nome
+                  th Preço
+                  th Desconto
+                  th Ações
+              tbody
+                tr(ng:repeat="product in vm.products")
+                  td {{product.Name}}
+                  td {{product.Price}}
+                  td {{product.Discount}}
+                  td
+                    button.ui.button.right.floated(ng:click="main.goTo('editProduct', {companyId: vm.companyId, id: product._id})") Editar
+                    
+              tfoot.full-width
+                tr
+                  th: b {{vm.products.length}} produtos
+                  th(colspan='4')
+                    .ui.right.floated.small.primary.labeled.icon.button(ng:click="main.goTo('saveProduct', {companyId: vm.companyId})")
+                      i.plus.icon
+                      |  Adicionar Produto
+
+
+      

@@ -1,0 +1,31 @@
+.listSupply-feature
+  .ui.centered.grid
+    .row
+      .twelve.wide.column
+        .ui.stacked.segment
+          h2.ui.dividing.header Cidades
+
+          .field
+            table.ui.celled.striped.table
+              thead
+                tr
+                  th Nome
+                  th Nº de Bairros
+                  th Ações
+              tbody
+                tr(ng:repeat="city in vm.cities")
+                  td {{city.name}}
+                  td {{city.neighborhoods.length}}
+                  td
+                    button.ui.button(ng:click="main.goTo('editCity', {id: city._id})") Editar
+                    
+              tfoot.full-width
+                tr
+                  th: b {{vm.cities.length}} cidades
+                  th(colspan='4')
+                    .ui.right.floated.small.primary.labeled.icon.button(ng:click="main.goTo('saveCity')")
+                      i.plus.icon
+                      |  Adicionar Cidade
+
+
+      

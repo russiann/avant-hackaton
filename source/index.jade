@@ -1,0 +1,26 @@
+doctype html
+html(ng-app='app')
+    head
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+
+    title Dashboard
+    
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,900italic,900,700italic,700,500italic,500,400italic,300italic' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="application.min.css")
+
+    // bower:css
+    // endbower
+
+    body(ng-controller='MainController as main' ng:class="{'no-sidebar': !main.isLogged()}")
+      menu
+
+      ui-view
+          
+    script(src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js")
+    script(src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&language=en&v=3.20")
+    script(src="https://cdn.socket.io/socket.io-1.4.5.js")
+    // bower:js
+    // endbower
+
+    script(src='application.js')
