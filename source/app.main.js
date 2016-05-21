@@ -6,14 +6,7 @@ const Run = (amMoment) => {
 
 /* @ngInject */
 const Config = ($stateProvider, $urlRouterProvider) => {
-  $stateProvider.state('app', {
-    url: '/login',
-    controller: 'LoginController',
-    controllerAs: 'root',
-    templateUrl: 'login.view.html'
-  });
-
-  $urlRouterProvider.otherwise('/categories');
+  $urlRouterProvider.otherwise('/');
 };
 
 angular.module('app', [
@@ -24,5 +17,5 @@ angular.module('app', [
     .run(Run)
     .config(Config)
     .value('api', {
-      host: 'http://demo6667629.mockable.io'
+      host: 'http://10.2.1.187:3000/api'
     })

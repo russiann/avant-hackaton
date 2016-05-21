@@ -6,15 +6,14 @@ html(ng-app='app')
 
     title Dashboard
     
-    link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,900italic,900,700italic,700,500italic,500,400italic,300italic' rel='stylesheet' type='text/css')
     link(rel="stylesheet" href="application.min.css")
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css')
 
     // bower:css
     // endbower
 
     body(ng-controller='MainController as main' ng:class="{'no-sidebar': !main.isLogged()}")
-      menu
-
+      menu(ng:hide="hideMenu")
       ui-view
           
     script(src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js")

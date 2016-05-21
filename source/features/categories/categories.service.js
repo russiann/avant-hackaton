@@ -6,23 +6,23 @@ class CategoryService {
   }
 
   list() {
-    return this.$http.get(`${this.host}/category`);
+    return this.$http.get(`${this.host}/Category`);
   }
 
   create(id) {
-    return this.$http.post(`${this.host}/category`);
+    return this.$http.post(`${this.host}/Category`);
   }
 
   get(id) {
-    return this.$http.get(`${this.host}/category/1`);
+    return this.$http.get(`${this.host}/Category/1`);
   }
 
   delete(id) {
-    return this.$http.delete(`${this.host}/category/1`);
+    return this.$http.delete(`${this.host}/Category/1`);
   }
 
   update(id) {
-    return this.$http.update(`${this.host}/category/1`);
+    return this.$http.update(`${this.host}/Category/1`);
   }
 
 }
